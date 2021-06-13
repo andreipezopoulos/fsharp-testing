@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  application:
+    image: cpfscore
+    environment:
+      - "CPF_SCORE_CONNECTION_STRING=Host=database; Database=postgres; Username=postgres; Password=password;"
+      - "CPF_SCORE_SALT=$$2a$$11$$piMzY.Jr1V4acYinm7iEdO"
+      - "CPF_SCORE_URL=http://0.0.0.0:8085"
+    ports:
+      - "8085:8085"
+    depends_on:
+      - database
+    volumes:
+      - ./src/docker/wait-for-it.sh:/opt/wait-for-it.sh
+    command: /opt/wait-for-it.sh postgres:8080 -t 60
+
+  database:
+    image: postgres
+    environment:
+      - "POSTGRES_PASSWORD=password"
+    ports:
+      - "8086:8080"
+    volumes:
+      - ./src/database/create.sql:/docker-entrypoint-initdb.d/create.sql

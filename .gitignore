@@ -1,0 +1,7 @@
+paket-files
+.fake
+.paket
+src/cpfscore/bin
+src/cpfscore/obj
+test_output
+paket.lock

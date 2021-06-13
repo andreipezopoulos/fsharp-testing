@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Config.fs" />
+    <Compile Include="Error.fs" />
+
+    <Compile Include="Crypto\Hash.fs" />
+    <Compile Include="Util\Lib.fs" />
+    <Compile Include="Util\Api.fs" />
+    <Compile Include="Util\Npgsql.fs" />
+
+    <Compile Include="Score\ScoreModel.fs" />
+    <Compile Include="Score\ScoreAPIv1.fs" />
+    <Compile Include="Score\ScoreExtractor.fs" />
+    <Compile Include="Score\ScoreDatabase.fs" />
+    <Compile Include="Score\ScoreController.fs" />
+
+    <Compile Include="ServerHealth\ServerHealthModel.fs" />
+    <Compile Include="ServerHealth\ServerHealthAPIv1.fs" />
+    <Compile Include="ServerHealth\ServerHealthController.fs" />
+
+    <Compile Include="Router.fs" />
+    <Compile Include="Program.fs" />
+
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>
