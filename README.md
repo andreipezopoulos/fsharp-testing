@@ -6,15 +6,15 @@
 4. Run `dotnet paket install` to install dependencies
 5. Run `dotnet fake build -t Run` to start application in watch mode (automatic recompilation and restart at file save)
 
-To be able to run, the server needs some simple environment configuration and a running postgres.
+To be able to run, the server needs some simple environment configuration and a running postgres (you should manually create the tables using the file `src/database/create.sql`).
 Don't worry If you haven't configured yet, when you run it, he will request what he needs.
-Or go and see the docker-compose file at src/docker.
+Or go and see the docker-compose file at `src/docker`.
 
 ### I just want to start the server and send some requests right away
 
 1. Make sure you have installed version of .Net SDK defined in `global.json`
 2. Execute `dotnet fsi docker.fsx`
-3. Go to src/requests, there are some examples there (using curl)
+3. Go to `src/requests`, there are some examples there (using curl)
 
 If you want to test a modified local version, before running the `docker.fsx`, runs `docker fsi publish.fsx`.
 
